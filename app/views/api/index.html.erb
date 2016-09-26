@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+<table>
+  <tbody>
+    <%= current_user.attributes %>
+    <% current_user.attributes.slice("email", "spectre_id").each do |k, v| %>
+      <%= "#{k}: #{v}\n" %><br>
+    <% end %>
+  </tbody>
+</table>
+# <% link_to %>
