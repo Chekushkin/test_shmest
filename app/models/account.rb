@@ -1,4 +1,4 @@
 class Account < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :login
   has_many :transactions, dependent: :destroy
 end
