@@ -1,15 +1,4 @@
 Rails.application.routes.draw do
-  get 'logins/new'
-
-  get 'logins/new'
-
-  get 'logins/create'
-
-  get 'logins/index'
-
-  get 'logins/new'
-
-  get 'logins/create'
 
   root 'api#index'
   devise_for :users

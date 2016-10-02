@@ -17,6 +17,9 @@ class LoginsController < ApplicationController
     current_user[:token]       = data[:data][:token]
     current_user[:connect_url] = data[:data][:connect_url]
     redirect_to(current_user[:connect_url])
-    # binding.pry
+  end
+
+  def show
+    binding.pry
   end
 end
