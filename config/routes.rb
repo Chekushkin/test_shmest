@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  post 'spectre_callbacks/success'
+
+  post 'spectre_callbacks/fail'
+
   root 'api#index'
   devise_for :users
   resources :accounts

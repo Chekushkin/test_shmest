@@ -1,0 +1,2 @@
+module SpectreCallbacksHelper
+end

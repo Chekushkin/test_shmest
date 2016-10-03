@@ -7,13 +7,8 @@
       <%= "#{k}: #{v}\n" %><br>
     <% end %>
 
+    <%= link_to("Refresh", destroy_user_session_path, method: :delete) %><br>
     Logins:
-
-    <% if current_user.attributes[:logins] %>
-      <% current_user.attributes[:logins].each do |login| %>
-        <%= link_to(login, login_path) %> \n
-      <% end %>
-    <% end %>
 
     <br><br><br><br><br>
     <%= link_to("Add login", new_login_path) %><br><br><br><br>
