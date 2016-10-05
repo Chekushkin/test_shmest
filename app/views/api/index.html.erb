@@ -6,12 +6,10 @@
     <% current_user.attributes.slice("email", "spectre_id").each do |k, v| %>
       <%= "#{k}: #{v}\n" %><br>
     <% end %>
+    <%= params %>
+    <%= link_to("Logins list", destroy_user_session_path, method: :delete) %><br>
 
-    <%= link_to("Refresh", destroy_user_session_path, method: :delete) %><br>
-    Logins:
-
-    <br><br><br><br><br>
-    <%= link_to("Add login", new_login_path) %><br><br><br><br>
+    <%= link_to("Add login", logins_path, method: :post) %><br><br><br><br>
 
     <% current_user.attributes.each do |k, v| %>
       <br> <%= "#{k} ..... #{v}" %>

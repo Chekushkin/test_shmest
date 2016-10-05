@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
-  before_validation(on: :create) do
-    send_request
-  end
+  before_validation :send_request, on: :create
 
   has_many :accounts, dependent: :destroy
 
@@ -24,9 +22,8 @@ class User < ActiveRecord::Base
       )
     ).with_indifferent_access
 
-    data = data[:data]
-    self[:spectre_id] = data[:id]
-    self[:identifier] = data[:identifier]
-    self[:secret]     = data[:secret]
+    self.spectre_id = data[:data][:id]
+    self.identifier = data[:data][:identifier]
+    self.secret     = data[:data][:secret]
   end
 end
